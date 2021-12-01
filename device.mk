@@ -6,3 +6,7 @@
 #
 
 LOCAL_PATH := device/realme/RE546F
+
+PRODUCT_PACKAGES += fastbootd
+
+PRODUCT_USE_DYNAMIC_PARTITIONS := true

@@ -37,6 +37,8 @@ my_product                                 /my_product      erofs   ro          
 my_engineering                             /my_engineering  ext4    ro,barrier=1                                                   wait,logical,first_stage_mount
 my_engineering                             /my_engineering  erofs   ro                                                             wait,logical,first_stage_mount
 /dev/block/by-name/cache                   /cache          ext4    noatime,nosuid,nodev,barrier=1,data=ordered                     wait,check,first_stage_mount
+
+/dev/block/by-name/oplusreserve2      /mnt/vendor/oplusreserve             ext4   nosuid,nodev,noatime,barrier=1                           wait,check,first_stage_mount,nofail
 #common_preload /common_preload ext4 ro wait,logical,first_stage_mount
 /dev/block/by-name/preload /special_preload ext4 ro wait
 /dev/block/by-name/metadata                /metadata       ext4    noatime,nosuid,nodev,discard                         wait,formattable,first_stage_mount
@@ -74,7 +76,7 @@ my_engineering                             /my_engineering  erofs   ro          
 /dev/block/bootdevice/by-name/keymasterbak /keymasterbak   emmc    defaults                                                        defaults
 /dev/block/bootdevice/by-name/apdp         /apdp           emmc    defaults                                                        defaults
 /dev/block/bootdevice/by-name/devinfo      /devinfo        emmc    defaults                                                        defaults
-/dev/block/bootdevice/by-name/persist      /persist        ext4    defaults                                                        defaults
+/dev/block/bootdevice/by-name/persist      /mnt/vendor/persist        ext4    defaults                                                        defaults
 /dev/block/bootdevice/by-name/oplusreserve2 /opporeserve    ext4    rw,seclabel,nosuid,nodev,noatime,data=ordered                   wait
 /dev/block/bootdevice/by-name/abl          /abl            emmc    defaults                                                        defaults
 /dev/block/bootdevice/by-name/ablbak       /ablbak         emmc    defaults                                                        defaults
